@@ -1,0 +1,35 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "pant-1",
+      "description": "Pantalón de lino",
+      "imageUrl": "https://picsum.photos/seed/10/600/800",
+      "imageHint": "pantalones moda"
+    },
+    {
+      "id": "buzo-1",
+      "description": "Buzo oversize violeta",
+      "imageUrl": "https://picsum.photos/seed/22/600/800",
+      "imageHint": "hoodie oversize"
+    },
+    {
+      "id": "remera-1",
+      "description": "Remera algodón premium",
+      "imageUrl": "https://picsum.photos/seed/33/600/800",
+      "imageHint": "tshirt fashion"
+    },
+    {
+      "id": "pijama-1",
+      "description": "Pijama polar soft oso",
+      "imageUrl": "https://picsum.photos/seed/44/600/800",
+      "imageHint": "pajamas soft"
+    },
+    {
+      "id": "hero-fashion",
+      "description": "Banner principal Marifer Moda",
+      "imageUrl": "https://picsum.photos/seed/fashion-hero/1200/600",
+      "imageHint": "fashion banner"
+    }
+  ]
+}
