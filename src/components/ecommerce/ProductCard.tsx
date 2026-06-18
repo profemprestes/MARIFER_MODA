@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from 'react';
@@ -41,57 +40,58 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-md transition-all duration-300">
-      <div className="relative aspect-[3/4] overflow-hidden">
+    <div className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-marifer-primary/5 hover:shadow-lg transition-all duration-300">
+      <div className="relative aspect-[3/4] overflow-hidden bg-marifer-bg">
         <Image
           src={product.images[0]}
           alt={product.title}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          data-ai-hint="fashion product"
+          sizes="(max-width: 768px) 50vw, 25vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
+          data-ai-hint="fashion clothes"
         />
         {hasDiscount && (
-          <Badge className="absolute top-3 left-3 bg-primary" variant="default">
+          <Badge className="absolute top-2 left-2 bg-marifer-primary text-[10px] px-2 py-0" variant="default">
             {discountPercentage}% OFF
           </Badge>
         )}
       </div>
 
-      <div className="p-4 flex flex-col gap-2">
+      <div className="p-3 md:p-4 flex flex-col gap-1.5">
         <div className="flex flex-col">
-          <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">{product.category}</span>
-          <h3 className="font-headline text-lg font-bold leading-tight line-clamp-1">{product.title}</h3>
+          <span className="text-[10px] font-bold text-marifer-primary/60 uppercase tracking-widest">{product.category}</span>
+          <h3 className="font-headline text-sm md:text-base font-bold text-marifer-dark leading-tight truncate">{product.title}</h3>
         </div>
 
-        <div className="flex items-baseline gap-2 mt-1">
-          <span className="font-headline text-xl font-extrabold text-foreground">
+        <div className="flex items-baseline gap-2">
+          <span className="font-headline text-lg md:text-xl font-extrabold text-marifer-dark">
             ${product.price.toLocaleString('es-UY')}
           </span>
           {hasDiscount && (
-            <span className="text-sm text-muted-foreground line-through">
+            <span className="text-xs text-muted-foreground line-through decoration-marifer-primary/30">
               ${product.originalPrice?.toLocaleString('es-UY')}
             </span>
           )}
         </div>
 
         <div className="flex items-center gap-1">
-          <span className="text-[10px] md:text-xs font-bold text-success uppercase">
+          <span className="text-[10px] font-bold text-marifer-whatsapp uppercase tracking-tight">
             Hasta 12 cuotas sin recargo
           </span>
         </div>
 
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogTrigger asChild>
-            <Button className="w-full mt-2 font-bold" variant="default">
-              Ver prendas
+            <Button className="w-full mt-1.5 font-bold bg-marifer-primary hover:bg-marifer-primary/90 rounded-xl" size="sm">
+              Ver detalles
             </Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
-              <DialogTitle className="font-headline text-2xl">{product.title}</DialogTitle>
+              <DialogTitle className="font-headline text-2xl text-marifer-dark">{product.title}</DialogTitle>
             </DialogHeader>
             <div className="grid gap-6 py-4">
-              <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden border">
+              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-marifer-primary/10">
                 <Image
                   src={product.images[0]}
                   alt={product.title}
@@ -100,11 +100,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 />
               </div>
               <div className="space-y-4">
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-marifer-dark/70 leading-relaxed font-body">
                   {product.description}
                 </p>
-                <div className="space-y-2">
-                  <Label className="text-sm font-bold">Seleccionar Talle</Label>
+                <div className="space-y-3">
+                  <Label className="text-sm font-bold text-marifer-dark">Seleccionar Talle</Label>
                   <RadioGroup 
                     onValueChange={(val) => setSelectedSize(val as Size)}
                     className="flex flex-wrap gap-2"
@@ -113,13 +113,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                       <div key={v.size} className="flex items-center">
                         <RadioGroupItem
                           value={v.size}
-                          id={`size-${v.size}`}
+                          id={`size-${product.id}-${v.size}`}
                           className="peer sr-only"
                           disabled={v.stock === 0}
                         />
                         <Label
-                          htmlFor={`size-${v.size}`}
-                          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border-2 border-muted bg-white text-sm font-bold ring-offset-background transition-all peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground hover:bg-secondary peer-disabled:opacity-20 peer-disabled:cursor-not-allowed"
+                          htmlFor={`size-${product.id}-${v.size}`}
+                          className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border-2 border-muted bg-white text-sm font-bold ring-offset-background transition-all peer-data-[state=checked]:border-marifer-primary peer-data-[state=checked]:bg-marifer-primary peer-data-[state=checked]:text-white hover:bg-marifer-bg peer-disabled:opacity-20 peer-disabled:cursor-not-allowed"
                         >
                           {v.size}
                         </Label>
@@ -133,7 +133,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
               <Button 
                 onClick={handleAddToCart} 
                 disabled={!selectedSize}
-                className="w-full h-12 font-bold text-lg"
+                className="w-full h-14 font-bold text-lg bg-marifer-primary hover:bg-marifer-primary/90 rounded-2xl"
               >
                 Agregar al Carrito
               </Button>

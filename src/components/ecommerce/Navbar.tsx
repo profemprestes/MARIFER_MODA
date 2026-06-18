@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -15,29 +14,29 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="w-6 h-6" />
+            <Menu className="w-6 h-6 text-marifer-dark" />
           </Button>
-          <span className="font-headline text-xl font-extrabold tracking-tighter text-primary">
+          <span className="font-headline text-xl font-extrabold tracking-tighter text-marifer-dark">
             MARIFER MODA
           </span>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
-          <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Inicio</a>
-          <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Novedades</a>
-          <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Ofertas</a>
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#" className="text-sm font-semibold text-marifer-dark/70 hover:text-marifer-primary transition-colors">Inicio</a>
+          <a href="#" className="text-sm font-semibold text-marifer-dark/70 hover:text-marifer-primary transition-colors">Novedades</a>
+          <a href="#" className="text-sm font-semibold text-marifer-dark/70 hover:text-marifer-primary transition-colors">Ofertas</a>
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
+          <Button variant="ghost" size="icon" className="hidden sm:inline-flex text-marifer-dark">
             <Search className="w-5 h-5" />
           </Button>
           
           <CartDrawer>
-            <Button variant="ghost" size="icon" className="relative">
+            <Button variant="ghost" size="icon" className="relative text-marifer-dark">
               <ShoppingBag className="w-6 h-6" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-marifer-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
                   {totalItems}
                 </span>
               )}

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -20,17 +19,17 @@ interface CategoryScrollProps {
 
 export const CategoryScroll = ({ selected, onSelect }: CategoryScrollProps) => {
   return (
-    <div className="w-full overflow-x-auto scrollbar-hide py-4">
-      <div className="flex gap-3 px-4">
+    <div className="w-full overflow-x-auto scrollbar-hide py-3">
+      <div className="flex gap-2.5 px-4">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => onSelect(cat)}
             className={cn(
-              "whitespace-nowrap px-6 py-2 rounded-full text-sm font-semibold transition-all shadow-sm border",
+              "whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 border",
               selected === cat
-                ? "bg-primary text-primary-foreground border-primary"
-                : "bg-white text-foreground border-border hover:bg-secondary"
+                ? "bg-marifer-primary text-white border-marifer-primary shadow-md shadow-marifer-primary/20"
+                : "bg-white text-marifer-dark border-marifer-primary/10 hover:bg-marifer-bg"
             )}
           >
             {cat}
