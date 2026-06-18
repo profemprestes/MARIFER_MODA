@@ -4,9 +4,11 @@
 @tailwind utilities;
 
 :root {
-  /* Soft linen white background */
-  --background: 270 20% 98%; 
-  --foreground: 260 50% 17%; /* Deep eggplant violet */
+  /* MARIFER MODA Official Palette */
+  /* #F9F6FC - Lavender White */
+  --background: 270 33% 98%; 
+  /* #251642 - Eggplant Violet */
+  --foreground: 260 50% 17%;
   
   --card: 0 0% 100%;
   --card-foreground: 260 50% 17%;
@@ -14,22 +16,23 @@
   --popover: 0 0% 100%;
   --popover-foreground: 260 50% 17%;
   
-  --primary: 268 40% 44%; /* Orchid violet #6C429C */
-  --primary-foreground: 270 20% 98%;
+  /* #6C429C - Orchid Violet */
+  --primary: 268 40% 44%;
+  --primary-foreground: 270 33% 98%;
   
-  --secondary: 260 20% 95%; /* Subtle grey-lavender #F4F0F7 */
+  --secondary: 260 20% 95%;
   --secondary-foreground: 260 50% 17%;
   
   --muted: 260 20% 95%;
   --muted-foreground: 260 20% 45%;
   
   --accent: 268 40% 44%;
-  --accent-foreground: 270 20% 98%;
+  --accent-foreground: 270 33% 98%;
   
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  /* Retail green #10B981 */
+  /* #10B981 - WhatsApp/Success Green */
   --success: 160 84% 39%;
   --success-foreground: 0 0% 100%;
 
@@ -44,7 +47,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-marifer-bg text-marifer-dark font-body antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline;

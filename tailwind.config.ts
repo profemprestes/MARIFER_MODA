@@ -18,6 +18,10 @@ export default {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        'marifer-bg': '#F9F6FC',
+        'marifer-dark': '#251642',
+        'marifer-primary': '#6C429C',
+        'marifer-whatsapp': '#10B981',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
